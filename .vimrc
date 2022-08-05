@@ -1,7 +1,8 @@
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-set nocompatible
 
 call plug#begin()
 
@@ -9,14 +10,13 @@ Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 set wrap
 " enable soft wrapping at the edge of the screen
+
 set linebreak
 " make it not wrap in the middle of a "word"
-
-
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
 
 " Enable file type detection. Vim will try to detect the type of file in use.
 filetype on
@@ -27,28 +27,28 @@ filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
 
-" Turn syntax highlighting on.
+" Turn syntax highlighting ON.
 syntax on
 
-" Add numbers to each line on the left-hand side.
+" Add line numbers per line, left-hand side.
 set number
 
-" Highlight cursor line underneath the cursor horizontally.
+" Highlight cursor line under the cursor (horizontal).
 set cursorline
 
-" Highlight cursor line underneath the cursor vertically.
+" Highlight cursor line under the cursor vertical.
 " set cursorcolumn
 
-" Set the commands to save in history default number is 20.
+" Set commands to save in history - default number is 20.
 set history=100
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
 
-" Make wildmenu behave like similar to Bash completion.
+" Make wildmenu behave similarly to Bash completion.
 set wildmode=list:longest
 
-" There are certain files that we would never want to edit with Vim.
+" Certain files should not be edited with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
