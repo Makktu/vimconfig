@@ -1,3 +1,11 @@
+set nocompatible
+
+call plug#begin()
+
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -17,7 +25,7 @@ syntax on
 set number
 
 " Highlight cursor line underneath the cursor horizontally.
-"set cursorline
+set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
 " set cursorcolumn
