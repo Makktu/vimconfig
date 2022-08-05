@@ -6,6 +6,12 @@ Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
+set wrap
+" enable soft wrapping at the edge of the screen
+set linebreak
+" make it not wrap in the middle of a "word"
+
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
