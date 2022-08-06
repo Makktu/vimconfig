@@ -1,3 +1,8 @@
+" run :PlugInstall to install plugins
+" and run :PlugUpdate periodically
+"___________________________________
+"___________________________________
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -11,6 +16,13 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+call plug#begin()
+  Plug 'preservim/nerdtree'
+call plug#end()
+
+" Start NERDTree and leave the cursor in it.
+autocmd VimEnter * NERDTree
 
 set wrap
 " enable soft wrapping at the edge of the screen
