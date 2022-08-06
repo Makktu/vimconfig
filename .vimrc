@@ -1,61 +1,49 @@
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " run :PlugInstall to install plugins
 " and run :PlugUpdate periodically
 "___________________________________
 "___________________________________
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " Start fzf (Fuzzy Finder) plugin
 
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+set nocompatible                    " Disable compatibility with vi which can cause unexpected issues.
 
-call plug#begin()
 
-Plug 'sheerun/vim-polyglot'
+call plug#begin()                   "
+Plug 'sheerun/vim-polyglot'         " Start the Vim-Plug plugin manager
+call plug#end()                     "
 
-call plug#end()
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+call plug#begin()                   "
+  Plug 'preservim/nerdtree'         " Start the NERDtree plugin
+call plug#end()                     "
 
-call plug#begin()
-  Plug 'preservim/nerdtree'
-call plug#end()
+autocmd VimEnter * NERDTree         " Start NERDTree and leave the cursor in it.
 
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
+set laststatus=2                    " Always show statusline.
 
-set laststatus=2
-" Always show statusline.
+set display=lastline                " Show as much as possible of the last line.
 
-set display=lastline
-" Show as much as possible of the last line.
+set showcmd                         " Show already typed keys when more are expected
 
-set showcmd
-" Show already typed keys when more are expected
+set wrap                            " enable soft wrapping at the edge of the screen
 
-set wrap
-" enable soft wrapping at the edge of the screen
+set linebreak                       " make it not wrap in the middle of a "word"
 
-set linebreak
-" make it not wrap in the middle of a "word"
+filetype on                         " Enable file type detection. Vim will try to detect the type of file in use.
 
-" Enable file type detection. Vim will try to detect the type of file in use.
-filetype on
+filetype plugin on                  " Enable plugins and load plugin for the detected file type.
 
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
+filetype indent on                  " Load an indent file for the detected file type.
 
-" Load an indent file for the detected file type.
-filetype indent on
+syntax on                           " Turn syntax highlighting ON.
 
-" Turn syntax highlighting ON.
-syntax on
 
-" Add line numbers per line, left-hand side.
-set number
+set number                          " Add line numbers per line, left-hand side.
 
-" Highlight cursor line under the cursor (horizontal).
-set cursorline
+
+set cursorline                      " Highlight cursor line under the cursor (horizontal).
 
 " Highlight cursor line under the cursor vertical.
 " set cursorcolumn
