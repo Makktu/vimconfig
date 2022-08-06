@@ -24,6 +24,15 @@ call plug#end()
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
+set laststatus=2
+" Always show statusline.
+
+set display=lastline
+" Show as much as possible of the last line.
+
+set showcmd
+" Show already typed keys when more are expected
+
 set wrap
 " enable soft wrapping at the edge of the screen
 
