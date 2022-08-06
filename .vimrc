@@ -1,52 +1,65 @@
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " run :PlugInstall to install plugins
 " and run :PlugUpdate periodically
 "___________________________________
 "___________________________________
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " Start fzf (Fuzzy Finder) plugin
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
 
-set nocompatible                    " Disable compatibility with vi which can cause unexpected issues.
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+call plug#begin()
 
-call plug#begin()                   "
-Plug 'sheerun/vim-polyglot'         " Start the Vim-Plug plugin manager
-call plug#end()                     "
+Plug 'sheerun/vim-polyglot'
 
+call plug#end()
 
-call plug#begin()                   "
-  Plug 'preservim/nerdtree'         " Start the NERDtree plugin
-call plug#end()                     "
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-autocmd VimEnter * NERDTree         " Start NERDTree and leave the cursor in it.
+call plug#begin()
+  Plug 'preservim/nerdtree'
+call plug#end()
 
-set foldcolumn=2                    " create a margin between text and window border 
-highlight FoldColumn ctermbg=0      " and make the gap transparent
+set foldcolumn=2
+highlight FoldColumn ctermbg=0
+" create a margin between contents and left side of window and make it transparent
 
-set laststatus=2                    " Always show statusline.
+" Start NERDTree and leave the cursor in it.
+autocmd VimEnter * NERDTree
 
-set display=lastline                " Show as much as possible of the last line.
+set laststatus=2
+" Always show statusline.
 
-set showcmd                         " Show already typed keys when more are expected
+set display=lastline
+" Show as much as possible of the last line.
 
-set wrap                            " enable soft wrapping at the edge of the screen
+set showcmd
+" Show already typed keys when more are expected
 
-set linebreak                       " make it not wrap in the middle of a 'word'
+set wrap
+" enable soft wrapping at the edge of the screen
 
-filetype on                         " Enable file type detection. Vim will try to detect the type of file in use.
+set linebreak
+" make it not wrap in the middle of a "word"
 
-filetype plugin on                  " Enable plugins and load plugin for the detected file type.
+" Enable file type detection. Vim will try to detect the type of file in use.
+filetype on
 
-filetype indent on                  " Load an indent file for the detected file type.
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
 
-syntax on                           " Turn syntax highlighting ON.
+" Load an indent file for the detected file type.
+filetype indent on
 
+" Turn syntax highlighting ON.
+syntax on
 
-set number                          " Add line numbers per line, left-hand side.
+" Add line numbers per line, left-hand side.
+set number
 
-
-set cursorline                      " Highlight cursor line under the cursor (horizontal).
+" Highlight cursor line under the cursor (horizontal).
+set cursorline
 
 " Highlight cursor line under the cursor vertical.
 " set cursorcolumn
