@@ -21,6 +21,9 @@ call plug#end()                     "
 
 autocmd VimEnter * NERDTree         " Start NERDTree and leave the cursor in it.
 
+set foldcolumn=2                    " create a margin between text and window border 
+highlight FoldColumn ctermbg=0      " and make the gap transparent
+
 set laststatus=2                    " Always show statusline.
 
 set display=lastline                " Show as much as possible of the last line.
@@ -29,7 +32,7 @@ set showcmd                         " Show already typed keys when more are expe
 
 set wrap                            " enable soft wrapping at the edge of the screen
 
-set linebreak                       " make it not wrap in the middle of a "word"
+set linebreak                       " make it not wrap in the middle of a 'word'
 
 filetype on                         " Enable file type detection. Vim will try to detect the type of file in use.
 
