@@ -22,8 +22,9 @@ call plug#begin()
 call plug#end()
 
 set foldcolumn=2
-highlight FoldColumn ctermbg=0
-" create a margin between contents and left side of window and make it transparent
+highlight FoldColumn ctermbg=None
+" create a margin between contents and left side of window
+" and make it same colour as theme background
 
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
