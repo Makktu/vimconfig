@@ -21,22 +21,16 @@ call plug#begin()
   Plug 'preservim/nerdtree'
 call plug#end()
 
+" Start NERDTree and leave the cursor in it.
+" autocmd VimEnter * NERDTree
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
 set foldcolumn=2
 highlight FoldColumn ctermbg=None
 " create a margin between contents and left side of window
 " and make it same colour as theme background
-
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
-
-set laststatus=2
-" Always show statusline.
-
-set display=lastline
-" Show as much as possible of the last line.
-
-set showcmd
-" Show already typed keys when more are expected
 
 set wrap
 " enable soft wrapping at the edge of the screen
@@ -80,3 +74,20 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " enable mouse to resize windows
 set mouse=a
+
+" Mac specific fix for function keys
+map <Esc>OP <F1>
+map <Esc>OQ <F2>
+map <Esc>OR <F3>
+map <Esc>OS <F4>
+map <Esc>[16~ <F5>
+map <Esc>[17~ <F6>
+map <Esc>[18~ <F7>
+map <Esc>[19~ <F8>
+map <Esc>[20~ <F9>
+map <Esc>[21~ <F10>
+map <Esc>[23~ <F11>
+map <Esc>[24~ <F12>
+
+" (map to F3) - insert current day, time and date
+:map! <F3> <C-R>=strftime('%c')<CR>
