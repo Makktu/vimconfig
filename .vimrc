@@ -38,6 +38,8 @@ set wrap
 set linebreak
 " make it not wrap in the middle of a "word"
 
+set scrolloff=3
+
 " Enable file type detection. Vim will try to detect the type of file in use.
 filetype on
 
@@ -91,3 +93,7 @@ map <Esc>[24~ <F12>
 
 " (map to F3) - insert current day, time and date
 :map! <F3> <C-R>=strftime('%c')<CR>
+
+map <F2> :NERDTreeToggle<CR>
+
+map <F1> :set nu!<CR>
