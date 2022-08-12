@@ -27,6 +27,8 @@ call plug#end()
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
+inoremap ii <esc>
+
 set foldcolumn=2
 highlight FoldColumn ctermbg=None
 " create a margin between contents and left side of window
