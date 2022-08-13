@@ -1,25 +1,28 @@
 " run :PlugInstall to install plugins
 " and run :PlugUpdate periodically
-"___________________________________
-"___________________________________
-
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
-
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"___________________________________
+"___________________________________
+
+"++++++++++++++++++++++++++++++
+"+++++++++ PLUGINS ++++++++++++
+"++++++++++++++++++++++++++++++
 
 call plug#begin()
-
-Plug 'sheerun/vim-polyglot'
-
-call plug#end()
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-call plug#begin()
-  Plug 'preservim/nerdtree'
+Plug 'sheerun/vim-polyglot'
+
+Plug 'preservim/nerdtree'
+
 call plug#end()
+
+"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
 
 " Start NERDTree and leave the cursor in it.
 " autocmd VimEnter * NERDTree
@@ -99,3 +102,10 @@ map <Esc>[24~ <F12>
 map <F2> :NERDTreeToggle<CR>
 
 map <F1> :set nu!<CR>
+
+"++++++++++++++++++++++++++++++++++++++++
+"+++++++++++ ABBREVIATIONS ++++++++++++++
+"++++++++++++++++++++++++++++++++++++++++
+
+ab gt ✅
+ab rc ❌
