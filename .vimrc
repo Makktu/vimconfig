@@ -1,5 +1,6 @@
 " run :PlugInstall to install plugins
 " and run :PlugUpdate periodically
+" To install Vim-Plug:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "___________________________________
@@ -30,19 +31,21 @@ set nocompatible
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
+" remap double-i to Esc (leaves Esc intact)
 inoremap ii <esc>
 
-set foldcolumn=2
-highlight FoldColumn ctermbg=None
 " create a margin between contents and left side of window
 " and make it same colour as theme background
+set foldcolumn=2
+highlight FoldColumn ctermbg=None
 
-set wrap
 " enable soft wrapping at the edge of the screen
+set wrap
 
+" make it not wrap in the middle of a 'word'
 set linebreak
-" make it not wrap in the middle of a "word"
 
+" screen will scroll when cursor 3 lines from bottom
 set scrolloff=3
 
 " Enable file type detection. Vim will try to detect the type of file in use.
